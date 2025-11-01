@@ -1,0 +1,52 @@
+$date
+	Sat Nov 01 17:05:03 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	100ps
+$end
+$scope module comparator_4bit_behav_tb $end
+$var wire 1 ! lt_tb $end
+$var wire 1 " gt_tb $end
+$var wire 1 # eq_tb $end
+$var reg 4 $ a_tb [3:0] $end
+$var reg 4 % b_tb [3:0] $end
+$scope module uut $end
+$var wire 4 & a [3:0] $end
+$var wire 4 ' b [3:0] $end
+$var wire 1 ! a_menor_que_b $end
+$var wire 1 " a_maior_que_b $end
+$var wire 1 # a_igual_b $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b11 '
+b101 &
+b11 %
+b101 $
+0#
+1"
+0!
+$end
+#100
+0"
+1#
+b1010 %
+b1010 '
+b1010 $
+b1010 &
+#200
+b101 %
+b101 '
+1!
+0#
+b11 $
+b11 &
+#400

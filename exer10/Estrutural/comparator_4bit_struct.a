@@ -1,0 +1,171 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_00000278894c6a40 .scope module, "comparator_4bit_struct" "comparator_4bit_struct" 2 22;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "a";
+    .port_info 1 /INPUT 4 "b";
+    .port_info 2 /OUTPUT 1 "a_maior_que_b";
+    .port_info 3 /OUTPUT 1 "a_menor_que_b";
+    .port_info 4 /OUTPUT 1 "a_igual_b";
+L_00000278894c2d00 .functor AND 1, L_00000278894c2520, L_00000278894c22f0, C4<1>, C4<1>;
+L_00000278894c26e0 .functor AND 1, L_00000278894c2d00, L_00000278894c2210, C4<1>, C4<1>;
+L_00000278894c2ec0 .functor AND 1, L_00000278894c26e0, L_00000278894c2670, C4<1>, C4<1>;
+L_0000027889523b20 .functor AND 1, L_00000278894c2520, L_00000278894c2980, C4<1>, C4<1>;
+L_0000027889523dc0 .functor OR 1, L_00000278894c2fa0, L_0000027889523b20, C4<0>, C4<0>;
+L_0000027889523880 .functor AND 1, L_00000278894c2520, L_00000278894c22f0, C4<1>, C4<1>;
+L_0000027889523b90 .functor AND 1, L_0000027889523880, L_00000278894c2440, C4<1>, C4<1>;
+L_0000027889523a40 .functor OR 1, L_0000027889523dc0, L_0000027889523b90, C4<0>, C4<0>;
+L_0000027889524220 .functor AND 1, L_00000278894c2520, L_00000278894c22f0, C4<1>, C4<1>;
+L_0000027889523d50 .functor AND 1, L_0000027889524220, L_00000278894c2210, C4<1>, C4<1>;
+L_0000027889523e30 .functor AND 1, L_0000027889523d50, L_00000278894c2bb0, C4<1>, C4<1>;
+L_0000027889523ff0 .functor OR 1, L_0000027889523a40, L_0000027889523e30, C4<0>, C4<0>;
+L_0000027889523c00 .functor AND 1, L_00000278894c2520, L_00000278894c23d0, C4<1>, C4<1>;
+L_0000027889523c70 .functor OR 1, L_00000278894c2e50, L_0000027889523c00, C4<0>, C4<0>;
+L_00000278895238f0 .functor AND 1, L_00000278894c2520, L_00000278894c22f0, C4<1>, C4<1>;
+L_0000027889523ce0 .functor AND 1, L_00000278895238f0, L_00000278894c2600, C4<1>, C4<1>;
+L_0000027889524290 .functor OR 1, L_0000027889523c70, L_0000027889523ce0, C4<0>, C4<0>;
+L_0000027889523ea0 .functor AND 1, L_00000278894c2520, L_00000278894c22f0, C4<1>, C4<1>;
+L_0000027889523f10 .functor AND 1, L_0000027889523ea0, L_00000278894c2210, C4<1>, C4<1>;
+L_00000278895246f0 .functor AND 1, L_0000027889523f10, L_00000278894c2c90, C4<1>, C4<1>;
+L_0000027889524370 .functor OR 1, L_0000027889524290, L_00000278895246f0, C4<0>, C4<0>;
+v00000278894c0ff0_0 .net *"_ivl_16", 0 0, L_00000278894c2d00;  1 drivers
+v00000278894c16d0_0 .net *"_ivl_18", 0 0, L_00000278894c26e0;  1 drivers
+v00000278894c1130_0 .net *"_ivl_22", 0 0, L_0000027889523b20;  1 drivers
+v00000278894c11d0_0 .net *"_ivl_24", 0 0, L_0000027889523dc0;  1 drivers
+v00000278894c1450_0 .net *"_ivl_26", 0 0, L_0000027889523880;  1 drivers
+v00000278894c1770_0 .net *"_ivl_28", 0 0, L_0000027889523b90;  1 drivers
+v00000278894c1950_0 .net *"_ivl_30", 0 0, L_0000027889523a40;  1 drivers
+v000002788951fb10_0 .net *"_ivl_32", 0 0, L_0000027889524220;  1 drivers
+v0000027889520970_0 .net *"_ivl_34", 0 0, L_0000027889523d50;  1 drivers
+v00000278895212d0_0 .net *"_ivl_36", 0 0, L_0000027889523e30;  1 drivers
+v0000027889521050_0 .net *"_ivl_40", 0 0, L_0000027889523c00;  1 drivers
+v0000027889520470_0 .net *"_ivl_42", 0 0, L_0000027889523c70;  1 drivers
+v0000027889520330_0 .net *"_ivl_44", 0 0, L_00000278895238f0;  1 drivers
+v000002788951f930_0 .net *"_ivl_46", 0 0, L_0000027889523ce0;  1 drivers
+v00000278895205b0_0 .net *"_ivl_48", 0 0, L_0000027889524290;  1 drivers
+v0000027889520bf0_0 .net *"_ivl_50", 0 0, L_0000027889523ea0;  1 drivers
+v0000027889520e70_0 .net *"_ivl_52", 0 0, L_0000027889523f10;  1 drivers
+v00000278895200b0_0 .net *"_ivl_54", 0 0, L_00000278895246f0;  1 drivers
+o00000278894ccca8 .functor BUFZ 4, C4<zzzz>; HiZ drive
+v000002788951fed0_0 .net "a", 3 0, o00000278894ccca8;  0 drivers
+v0000027889520650_0 .net "a_igual_b", 0 0, L_00000278894c2ec0;  1 drivers
+v000002788951f750_0 .net "a_maior_que_b", 0 0, L_0000027889523ff0;  1 drivers
+v0000027889520f10_0 .net "a_menor_que_b", 0 0, L_0000027889524370;  1 drivers
+o00000278894ccd68 .functor BUFZ 4, C4<zzzz>; HiZ drive
+v000002788951fe30_0 .net "b", 3 0, o00000278894ccd68;  0 drivers
+v0000027889520c90_0 .net "eq0", 0 0, L_00000278894c2670;  1 drivers
+v000002788951f6b0_0 .net "eq1", 0 0, L_00000278894c2210;  1 drivers
+v0000027889521230_0 .net "eq2", 0 0, L_00000278894c22f0;  1 drivers
+v000002788951fbb0_0 .net "eq3", 0 0, L_00000278894c2520;  1 drivers
+v0000027889520290_0 .net "gt0", 0 0, L_00000278894c2bb0;  1 drivers
+v00000278895206f0_0 .net "gt1", 0 0, L_00000278894c2440;  1 drivers
+v000002788951f430_0 .net "gt2", 0 0, L_00000278894c2980;  1 drivers
+v000002788951f610_0 .net "gt3", 0 0, L_00000278894c2fa0;  1 drivers
+v0000027889520d30_0 .net "lt0", 0 0, L_00000278894c2c90;  1 drivers
+v0000027889520dd0_0 .net "lt1", 0 0, L_00000278894c2600;  1 drivers
+v000002788951f9d0_0 .net "lt2", 0 0, L_00000278894c23d0;  1 drivers
+v000002788951fd90_0 .net "lt3", 0 0, L_00000278894c2e50;  1 drivers
+L_00000278895210f0 .part o00000278894ccca8, 3, 1;
+L_0000027889521190 .part o00000278894ccd68, 3, 1;
+L_000002788951f570 .part o00000278894ccca8, 2, 1;
+L_000002788951fc50 .part o00000278894ccd68, 2, 1;
+L_000002788951f7f0 .part o00000278894ccca8, 1, 1;
+L_0000027889520fb0 .part o00000278894ccd68, 1, 1;
+L_0000027889520790 .part o00000278894ccca8, 0, 1;
+L_0000027889520a10 .part o00000278894ccd68, 0, 1;
+S_00000278894c6bd0 .scope module, "C0" "comparator_1bit_struct" 2 50, 2 1 0, S_00000278894c6a40;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "a_maior_que_b";
+    .port_info 3 /OUTPUT 1 "a_menor_que_b";
+    .port_info 4 /OUTPUT 1 "a_igual_b";
+L_00000278894c3080 .functor NOT 1, L_0000027889520790, C4<0>, C4<0>, C4<0>;
+L_00000278894c2b40 .functor NOT 1, L_0000027889520a10, C4<0>, C4<0>, C4<0>;
+L_00000278894c2bb0 .functor AND 1, L_0000027889520790, L_00000278894c2b40, C4<1>, C4<1>;
+L_00000278894c2c90 .functor AND 1, L_00000278894c3080, L_0000027889520a10, C4<1>, C4<1>;
+L_00000278894c24b0 .functor XOR 1, L_0000027889520790, L_0000027889520a10, C4<0>, C4<0>;
+L_00000278894c2670 .functor NOT 1, L_00000278894c24b0, C4<0>, C4<0>, C4<0>;
+v00000278894c1270_0 .net "a", 0 0, L_0000027889520790;  1 drivers
+v00000278894c1310_0 .net "a_igual_b", 0 0, L_00000278894c2670;  alias, 1 drivers
+v00000278894c1d10_0 .net "a_maior_que_b", 0 0, L_00000278894c2bb0;  alias, 1 drivers
+v00000278894c0690_0 .net "a_menor_que_b", 0 0, L_00000278894c2c90;  alias, 1 drivers
+v00000278894c1630_0 .net "b", 0 0, L_0000027889520a10;  1 drivers
+v00000278894c1e50_0 .net "not_a", 0 0, L_00000278894c3080;  1 drivers
+v00000278894c1bd0_0 .net "not_b", 0 0, L_00000278894c2b40;  1 drivers
+v00000278894c1810_0 .net "xor_out", 0 0, L_00000278894c24b0;  1 drivers
+S_00000278894c4590 .scope module, "C1" "comparator_1bit_struct" 2 45, 2 1 0, S_00000278894c6a40;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "a_maior_que_b";
+    .port_info 3 /OUTPUT 1 "a_menor_que_b";
+    .port_info 4 /OUTPUT 1 "a_igual_b";
+L_00000278894c2d70 .functor NOT 1, L_000002788951f7f0, C4<0>, C4<0>, C4<0>;
+L_00000278894c2750 .functor NOT 1, L_0000027889520fb0, C4<0>, C4<0>, C4<0>;
+L_00000278894c2440 .functor AND 1, L_000002788951f7f0, L_00000278894c2750, C4<1>, C4<1>;
+L_00000278894c2600 .functor AND 1, L_00000278894c2d70, L_0000027889520fb0, C4<1>, C4<1>;
+L_00000278894c2de0 .functor XOR 1, L_000002788951f7f0, L_0000027889520fb0, C4<0>, C4<0>;
+L_00000278894c2210 .functor NOT 1, L_00000278894c2de0, C4<0>, C4<0>, C4<0>;
+v00000278894c07d0_0 .net "a", 0 0, L_000002788951f7f0;  1 drivers
+v00000278894c1a90_0 .net "a_igual_b", 0 0, L_00000278894c2210;  alias, 1 drivers
+v00000278894c1ef0_0 .net "a_maior_que_b", 0 0, L_00000278894c2440;  alias, 1 drivers
+v00000278894c0550_0 .net "a_menor_que_b", 0 0, L_00000278894c2600;  alias, 1 drivers
+v00000278894c05f0_0 .net "b", 0 0, L_0000027889520fb0;  1 drivers
+v00000278894c1f90_0 .net "not_a", 0 0, L_00000278894c2d70;  1 drivers
+v00000278894c0b90_0 .net "not_b", 0 0, L_00000278894c2750;  1 drivers
+v00000278894c0730_0 .net "xor_out", 0 0, L_00000278894c2de0;  1 drivers
+S_000002788951f0c0 .scope module, "C2" "comparator_1bit_struct" 2 40, 2 1 0, S_00000278894c6a40;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "a_maior_que_b";
+    .port_info 3 /OUTPUT 1 "a_menor_que_b";
+    .port_info 4 /OUTPUT 1 "a_igual_b";
+L_00000278894c2360 .functor NOT 1, L_000002788951f570, C4<0>, C4<0>, C4<0>;
+L_00000278894c2c20 .functor NOT 1, L_000002788951fc50, C4<0>, C4<0>, C4<0>;
+L_00000278894c2980 .functor AND 1, L_000002788951f570, L_00000278894c2c20, C4<1>, C4<1>;
+L_00000278894c23d0 .functor AND 1, L_00000278894c2360, L_000002788951fc50, C4<1>, C4<1>;
+L_00000278894c2a60 .functor XOR 1, L_000002788951f570, L_000002788951fc50, C4<0>, C4<0>;
+L_00000278894c22f0 .functor NOT 1, L_00000278894c2a60, C4<0>, C4<0>, C4<0>;
+v00000278894c0910_0 .net "a", 0 0, L_000002788951f570;  1 drivers
+v00000278894c1b30_0 .net "a_igual_b", 0 0, L_00000278894c22f0;  alias, 1 drivers
+v00000278894c2030_0 .net "a_maior_que_b", 0 0, L_00000278894c2980;  alias, 1 drivers
+v00000278894c0c30_0 .net "a_menor_que_b", 0 0, L_00000278894c23d0;  alias, 1 drivers
+v00000278894c0190_0 .net "b", 0 0, L_000002788951fc50;  1 drivers
+v00000278894c0230_0 .net "not_a", 0 0, L_00000278894c2360;  1 drivers
+v00000278894c0410_0 .net "not_b", 0 0, L_00000278894c2c20;  1 drivers
+v00000278894c13b0_0 .net "xor_out", 0 0, L_00000278894c2a60;  1 drivers
+S_000002788951f250 .scope module, "C3" "comparator_1bit_struct" 2 35, 2 1 0, S_00000278894c6a40;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "a_maior_que_b";
+    .port_info 3 /OUTPUT 1 "a_menor_que_b";
+    .port_info 4 /OUTPUT 1 "a_igual_b";
+L_00000278894c3010 .functor NOT 1, L_00000278895210f0, C4<0>, C4<0>, C4<0>;
+L_00000278894c2ad0 .functor NOT 1, L_0000027889521190, C4<0>, C4<0>, C4<0>;
+L_00000278894c2fa0 .functor AND 1, L_00000278895210f0, L_00000278894c2ad0, C4<1>, C4<1>;
+L_00000278894c2e50 .functor AND 1, L_00000278894c3010, L_0000027889521190, C4<1>, C4<1>;
+L_00000278894c2910 .functor XOR 1, L_00000278895210f0, L_0000027889521190, C4<0>, C4<0>;
+L_00000278894c2520 .functor NOT 1, L_00000278894c2910, C4<0>, C4<0>, C4<0>;
+v00000278894c04b0_0 .net "a", 0 0, L_00000278895210f0;  1 drivers
+v00000278894c09b0_0 .net "a_igual_b", 0 0, L_00000278894c2520;  alias, 1 drivers
+v00000278894c0cd0_0 .net "a_maior_que_b", 0 0, L_00000278894c2fa0;  alias, 1 drivers
+v00000278894c1590_0 .net "a_menor_que_b", 0 0, L_00000278894c2e50;  alias, 1 drivers
+v00000278894c18b0_0 .net "b", 0 0, L_0000027889521190;  1 drivers
+v00000278894c0d70_0 .net "not_a", 0 0, L_00000278894c3010;  1 drivers
+v00000278894c0eb0_0 .net "not_b", 0 0, L_00000278894c2ad0;  1 drivers
+v00000278894c0f50_0 .net "xor_out", 0 0, L_00000278894c2910;  1 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "comparator_4bit_struct.v";

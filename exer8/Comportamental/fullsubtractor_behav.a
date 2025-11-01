@@ -1,0 +1,45 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000002247d632720 .scope module, "fullsubtractor_behav" "fullsubtractor_behav" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /INPUT 1 "borrow_in";
+    .port_info 3 /OUTPUT 1 "diff";
+    .port_info 4 /OUTPUT 1 "borrow_out";
+o000002247d667128 .functor BUFZ 1, C4<z>; HiZ drive
+o000002247d667158 .functor BUFZ 1, C4<z>; HiZ drive
+L_000002247d77ac20 .functor XOR 1, o000002247d667128, o000002247d667158, C4<0>, C4<0>;
+o000002247d667188 .functor BUFZ 1, C4<z>; HiZ drive
+L_000002247d632d80 .functor XOR 1, L_000002247d77ac20, o000002247d667188, C4<0>, C4<0>;
+L_000002247d632fa0 .functor NOT 1, o000002247d667128, C4<0>, C4<0>, C4<0>;
+L_000002247d6331e0 .functor AND 1, L_000002247d632fa0, o000002247d667158, C4<1>, C4<1>;
+L_000002247d6abce0 .functor NOT 1, o000002247d667128, C4<0>, C4<0>, C4<0>;
+L_000002247d6abd50 .functor AND 1, L_000002247d6abce0, o000002247d667188, C4<1>, C4<1>;
+L_000002247d6abdc0 .functor OR 1, L_000002247d6331e0, L_000002247d6abd50, C4<0>, C4<0>;
+L_000002247d6abe30 .functor AND 1, o000002247d667158, o000002247d667188, C4<1>, C4<1>;
+L_000002247d6abea0 .functor OR 1, L_000002247d6abdc0, L_000002247d6abe30, C4<0>, C4<0>;
+v000002247d77ab80_0 .net *"_ivl_0", 0 0, L_000002247d77ac20;  1 drivers
+v000002247d77ee30_0 .net *"_ivl_10", 0 0, L_000002247d6abd50;  1 drivers
+v000002247d77eed0_0 .net *"_ivl_12", 0 0, L_000002247d6abdc0;  1 drivers
+v000002247d6328b0_0 .net *"_ivl_14", 0 0, L_000002247d6abe30;  1 drivers
+v000002247d632950_0 .net *"_ivl_4", 0 0, L_000002247d632fa0;  1 drivers
+v000002247d6329f0_0 .net *"_ivl_6", 0 0, L_000002247d6331e0;  1 drivers
+v000002247d632a90_0 .net *"_ivl_8", 0 0, L_000002247d6abce0;  1 drivers
+v000002247d6abc40_0 .net "a", 0 0, o000002247d667128;  0 drivers
+v000002247d661280_0 .net "b", 0 0, o000002247d667158;  0 drivers
+v000002247d6610a0_0 .net "borrow_in", 0 0, o000002247d667188;  0 drivers
+v000002247d660ec0_0 .net "borrow_out", 0 0, L_000002247d6abea0;  1 drivers
+v000002247d661780_0 .net "diff", 0 0, L_000002247d632d80;  1 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "fullsubtractor_behav.v";

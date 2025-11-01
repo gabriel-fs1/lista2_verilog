@@ -1,0 +1,41 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000001d6682326e0 .scope module, "fullsubtractor_struct" "fullsubtractor_struct" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /INPUT 1 "borrow_in";
+    .port_info 3 /OUTPUT 1 "diff";
+    .port_info 4 /OUTPUT 1 "borrow_out";
+o000001d668266fb8 .functor BUFZ 1, C4<z>; HiZ drive
+o000001d668267078 .functor BUFZ 1, C4<z>; HiZ drive
+L_000001d668232f80 .functor XOR 1, o000001d668266fb8, o000001d668267078, C4<0>, C4<0>;
+o000001d6682670a8 .functor BUFZ 1, C4<z>; HiZ drive
+L_000001d6682331c0 .functor XOR 1, L_000001d668232f80, o000001d6682670a8, C4<0>, C4<0>;
+L_000001d6682abdf0 .functor NOT 1, o000001d668266fb8, C4<0>, C4<0>, C4<0>;
+L_000001d6682abe60 .functor AND 1, L_000001d6682abdf0, o000001d668267078, C4<1>, C4<1>;
+L_000001d6682abed0 .functor AND 1, L_000001d6682abdf0, o000001d6682670a8, C4<1>, C4<1>;
+L_000001d6682abf40 .functor AND 1, o000001d668267078, o000001d6682670a8, C4<1>, C4<1>;
+L_000001d66821bb80 .functor OR 1, L_000001d6682abe60, L_000001d6682abed0, L_000001d6682abf40, C4<0>;
+v000001d668232d60_0 .net "a", 0 0, o000001d668266fb8;  0 drivers
+v000001d66821ee80_0 .net "and1_out", 0 0, L_000001d6682abe60;  1 drivers
+v000001d66821ef20_0 .net "and2_out", 0 0, L_000001d6682abed0;  1 drivers
+v000001d668232870_0 .net "and3_out", 0 0, L_000001d6682abf40;  1 drivers
+v000001d668232910_0 .net "b", 0 0, o000001d668267078;  0 drivers
+v000001d6682329b0_0 .net "borrow_in", 0 0, o000001d6682670a8;  0 drivers
+v000001d668232a50_0 .net "borrow_out", 0 0, L_000001d66821bb80;  1 drivers
+v000001d668232af0_0 .net "diff", 0 0, L_000001d6682331c0;  1 drivers
+v000001d6682abc20_0 .net "diff_wire", 0 0, L_000001d668232f80;  1 drivers
+v000001d6682abd50_0 .net "not_a", 0 0, L_000001d6682abdf0;  1 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "fullsubtractor_struct.v";

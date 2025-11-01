@@ -1,0 +1,37 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000001fcb94727f0 .scope module, "fulladder_struct" "fulladder_struct" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /INPUT 1 "carry_in";
+    .port_info 3 /OUTPUT 1 "sum";
+    .port_info 4 /OUTPUT 1 "carry_out";
+o000001fcb94a6fd8 .functor BUFZ 1, C4<z>; HiZ drive
+o000001fcb94a7008 .functor BUFZ 1, C4<z>; HiZ drive
+L_000001fcb958ef50 .functor XOR 1, o000001fcb94a6fd8, o000001fcb94a7008, C4<0>, C4<0>;
+L_000001fcb9473020 .functor AND 1, o000001fcb94a6fd8, o000001fcb94a7008, C4<1>, C4<1>;
+o000001fcb94a7038 .functor BUFZ 1, C4<z>; HiZ drive
+L_000001fcb9473180 .functor XOR 1, L_000001fcb958ef50, o000001fcb94a7038, C4<0>, C4<0>;
+L_000001fcb94ebe20 .functor AND 1, L_000001fcb958ef50, o000001fcb94a7038, C4<1>, C4<1>;
+L_000001fcb94ebe90 .functor OR 1, L_000001fcb9473020, L_000001fcb94ebe20, C4<0>, C4<0>;
+v000001fcb9472980_0 .net "a", 0 0, o000001fcb94a6fd8;  0 drivers
+v000001fcb9472a20_0 .net "b", 0 0, o000001fcb94a7008;  0 drivers
+v000001fcb9472ac0_0 .net "carry_in", 0 0, o000001fcb94a7038;  0 drivers
+v000001fcb958ee10_0 .net "carry_out", 0 0, L_000001fcb94ebe90;  1 drivers
+v000001fcb958eeb0_0 .net "sum", 0 0, L_000001fcb9473180;  1 drivers
+v000001fcb94ebc40_0 .net "w_carry_ha1", 0 0, L_000001fcb9473020;  1 drivers
+v000001fcb94ebce0_0 .net "w_carry_ha2", 0 0, L_000001fcb94ebe20;  1 drivers
+v000001fcb94ebd80_0 .net "w_sum_ha1", 0 0, L_000001fcb958ef50;  1 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "fulladder_struct.v";
