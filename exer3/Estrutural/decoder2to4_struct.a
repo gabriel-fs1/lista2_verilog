@@ -1,0 +1,46 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_00000230149d27f0 .scope module, "decoder2to4_struct" "decoder2to4_struct" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 2 "in";
+    .port_info 1 /OUTPUT 4 "out";
+L_0000023014a049d0 .functor NOT 1, L_0000023014a014b0, C4<0>, C4<0>, C4<0>;
+L_0000023014a02140 .functor NOT 1, L_0000023014a01eb0, C4<0>, C4<0>, C4<0>;
+L_0000023014a021b0 .functor AND 1, L_0000023014a049d0, L_0000023014a02140, C4<1>, C4<1>;
+L_0000023014a02220 .functor AND 1, L_0000023014a049d0, L_0000023014a01730, C4<1>, C4<1>;
+L_0000023014a02290 .functor AND 1, L_0000023014a01cd0, L_0000023014a02140, C4<1>, C4<1>;
+L_0000023014a02390 .functor AND 1, L_0000023014a01b90, L_0000023014a01690, C4<1>, C4<1>;
+v00000230149d2eb0_0 .net *"_ivl_1", 0 0, L_0000023014a014b0;  1 drivers
+v00000230149bbdd0_0 .net *"_ivl_10", 0 0, L_0000023014a02290;  1 drivers
+v00000230149bbe70_0 .net *"_ivl_13", 0 0, L_0000023014a01cd0;  1 drivers
+v00000230149d2980_0 .net *"_ivl_14", 0 0, L_0000023014a02390;  1 drivers
+v00000230149d2a20_0 .net *"_ivl_18", 0 0, L_0000023014a01b90;  1 drivers
+v00000230149d2ac0_0 .net *"_ivl_20", 0 0, L_0000023014a01690;  1 drivers
+v0000023014a010f0_0 .net *"_ivl_3", 0 0, L_0000023014a01eb0;  1 drivers
+v0000023014a01e10_0 .net *"_ivl_4", 0 0, L_0000023014a021b0;  1 drivers
+v0000023014a01af0_0 .net *"_ivl_6", 0 0, L_0000023014a02220;  1 drivers
+v0000023014a01f50_0 .net *"_ivl_9", 0 0, L_0000023014a01730;  1 drivers
+o0000023014a07178 .functor BUFZ 2, C4<zz>; HiZ drive
+v0000023014a01230_0 .net "in", 1 0, o0000023014a07178;  0 drivers
+v0000023014a01370_0 .net "not_in0", 0 0, L_0000023014a02140;  1 drivers
+v0000023014a017d0_0 .net "not_in1", 0 0, L_0000023014a049d0;  1 drivers
+v0000023014a01190_0 .net "out", 3 0, L_0000023014a015f0;  1 drivers
+L_0000023014a014b0 .part o0000023014a07178, 1, 1;
+L_0000023014a01eb0 .part o0000023014a07178, 0, 1;
+L_0000023014a01730 .part o0000023014a07178, 0, 1;
+L_0000023014a01cd0 .part o0000023014a07178, 1, 1;
+L_0000023014a015f0 .concat8 [ 1 1 1 1], L_0000023014a021b0, L_0000023014a02220, L_0000023014a02290, L_0000023014a02390;
+L_0000023014a01b90 .part o0000023014a07178, 1, 1;
+L_0000023014a01690 .part o0000023014a07178, 0, 1;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "decoder2to4_struct.v";

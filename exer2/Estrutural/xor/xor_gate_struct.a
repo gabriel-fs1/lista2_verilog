@@ -1,0 +1,33 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_00000274aab02830 .scope module, "xor_gate_struct" "xor_gate_struct" 2 6;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "y";
+o00000274aab36f98 .functor BUFZ 1, C4<z>; HiZ drive
+L_00000274aab02fc0 .functor NOT 1, o00000274aab36f98, C4<0>, C4<0>, C4<0>;
+o00000274aab37028 .functor BUFZ 1, C4<z>; HiZ drive
+L_00000274aab031c0 .functor NOT 1, o00000274aab37028, C4<0>, C4<0>, C4<0>;
+L_00000274aacae950 .functor AND 1, o00000274aab36f98, L_00000274aab031c0, C4<1>, C4<1>;
+L_00000274aacae9c0 .functor AND 1, L_00000274aab02fc0, o00000274aab37028, C4<1>, C4<1>;
+L_00000274aacaea30 .functor OR 1, L_00000274aacae950, L_00000274aacae9c0, C4<0>, C4<0>;
+v00000274aab02d80_0 .net "a", 0 0, o00000274aab36f98;  0 drivers
+v00000274aab029c0_0 .net "and_1", 0 0, L_00000274aacae950;  1 drivers
+v00000274aab02a60_0 .net "and_2", 0 0, L_00000274aacae9c0;  1 drivers
+v00000274aab02b00_0 .net "b", 0 0, o00000274aab37028;  0 drivers
+v00000274aacae770_0 .net "not_a", 0 0, L_00000274aab02fc0;  1 drivers
+v00000274aacae810_0 .net "not_b", 0 0, L_00000274aab031c0;  1 drivers
+v00000274aacae8b0_0 .net "y", 0 0, L_00000274aacaea30;  1 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "xor_gate_struct.v";

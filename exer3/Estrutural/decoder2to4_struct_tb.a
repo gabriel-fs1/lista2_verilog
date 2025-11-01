@@ -1,0 +1,71 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 10;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000026174dbbc90 .scope module, "decoder2to4_struct_tb" "decoder2to4_struct_tb" 2 4;
+ .timescale -9 -10;
+v0000026174cad940_0 .var "in_tb", 1 0;
+v0000026174cad9e0_0 .net "out_tb", 3 0, L_0000026174cb0340;  1 drivers
+S_0000026174dbcf90 .scope module, "uut" "decoder2to4_struct" 2 13, 3 1 0, S_0000026174dbbc90;
+ .timescale 0 0;
+    .port_info 0 /INPUT 2 "in";
+    .port_info 1 /OUTPUT 4 "out";
+L_0000026174caecd0 .functor NOT 1, L_0000026174cada80, C4<0>, C4<0>, C4<0>;
+L_0000026174caf2f0 .functor NOT 1, L_0000026174cadee0, C4<0>, C4<0>, C4<0>;
+L_0000026174caf050 .functor AND 1, L_0000026174caecd0, L_0000026174caf2f0, C4<1>, C4<1>;
+L_0000026174caed40 .functor AND 1, L_0000026174caecd0, L_0000026174cadf80, C4<1>, C4<1>;
+L_0000026174caedb0 .functor AND 1, L_0000026174cb0fc0, L_0000026174caf2f0, C4<1>, C4<1>;
+L_0000026174caee20 .functor AND 1, L_0000026174cafc60, L_0000026174cb0840, C4<1>, C4<1>;
+v0000026174c32ef0_0 .net *"_ivl_1", 0 0, L_0000026174cada80;  1 drivers
+v0000026174c32b20_0 .net *"_ivl_10", 0 0, L_0000026174caedb0;  1 drivers
+v0000026174dbbe20_0 .net *"_ivl_13", 0 0, L_0000026174cb0fc0;  1 drivers
+v0000026174dbbec0_0 .net *"_ivl_14", 0 0, L_0000026174caee20;  1 drivers
+v0000026174c645f0_0 .net *"_ivl_18", 0 0, L_0000026174cafc60;  1 drivers
+v0000026174c64690_0 .net *"_ivl_20", 0 0, L_0000026174cb0840;  1 drivers
+v0000026174c64730_0 .net *"_ivl_3", 0 0, L_0000026174cadee0;  1 drivers
+v0000026174cadc60_0 .net *"_ivl_4", 0 0, L_0000026174caf050;  1 drivers
+v0000026174cadda0_0 .net *"_ivl_6", 0 0, L_0000026174caed40;  1 drivers
+v0000026174cad8a0_0 .net *"_ivl_9", 0 0, L_0000026174cadf80;  1 drivers
+v0000026174cadb20_0 .net "in", 1 0, v0000026174cad940_0;  1 drivers
+v0000026174cadd00_0 .net "not_in0", 0 0, L_0000026174caf2f0;  1 drivers
+v0000026174cadbc0_0 .net "not_in1", 0 0, L_0000026174caecd0;  1 drivers
+v0000026174cade40_0 .net "out", 3 0, L_0000026174cb0340;  alias, 1 drivers
+L_0000026174cada80 .part v0000026174cad940_0, 1, 1;
+L_0000026174cadee0 .part v0000026174cad940_0, 0, 1;
+L_0000026174cadf80 .part v0000026174cad940_0, 0, 1;
+L_0000026174cb0fc0 .part v0000026174cad940_0, 1, 1;
+L_0000026174cb0340 .concat8 [ 1 1 1 1], L_0000026174caf050, L_0000026174caed40, L_0000026174caedb0, L_0000026174caee20;
+L_0000026174cafc60 .part v0000026174cad940_0, 1, 1;
+L_0000026174cb0840 .part v0000026174cad940_0, 0, 1;
+    .scope S_0000026174dbbc90;
+T_0 ;
+    %vpi_call 2 20 "$dumpfile", "decoder2to4_struct.vcd" {0 0 0};
+    %vpi_call 2 21 "$dumpvars", 32'sb00000000000000000000000000000000, S_0000026174dbbc90 {0 0 0};
+    %vpi_call 2 25 "$monitor", "Tempo=%0t | in[1:0] = %b | out[3:0] = %b", $time, v0000026174cad940_0, v0000026174cad9e0_0 {0 0 0};
+    %pushi/vec4 0, 0, 2;
+    %store/vec4 v0000026174cad940_0, 0, 2;
+    %delay 100, 0;
+    %pushi/vec4 1, 0, 2;
+    %store/vec4 v0000026174cad940_0, 0, 2;
+    %delay 100, 0;
+    %pushi/vec4 2, 0, 2;
+    %store/vec4 v0000026174cad940_0, 0, 2;
+    %delay 100, 0;
+    %pushi/vec4 3, 0, 2;
+    %store/vec4 v0000026174cad940_0, 0, 2;
+    %delay 100, 0;
+    %delay 100, 0;
+    %vpi_call 2 44 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "decoder2to4_struct_tb.v";
+    "./decoder2to4_struct.v";
